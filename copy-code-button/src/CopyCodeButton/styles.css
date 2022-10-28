@@ -1,0 +1,12 @@
+pre {
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+pre copy-code-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}

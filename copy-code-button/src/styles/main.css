@@ -1,0 +1,54 @@
+/* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1920,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+  --theme-background: hsl(0, 0%, 98%);
+  --theme-on-background: hsl(0, 0%, 5%);
+
+  --step--2: clamp(0.91rem, calc(0.90rem + 0.05vw), 0.96rem);
+  --step--1: clamp(1.09rem, calc(1.07rem + 0.11vw), 1.20rem);
+  --step-0: clamp(1.31rem, calc(1.28rem + 0.19vw), 1.50rem);
+  --step-1: clamp(1.58rem, calc(1.52rem + 0.30vw), 1.88rem);
+  --step-2: clamp(1.89rem, calc(1.80rem + 0.45vw), 2.34rem);
+  --step-3: clamp(2.27rem, calc(2.14rem + 0.66vw), 2.93rem);
+  --step-4: clamp(2.72rem, calc(2.53rem + 0.94vw), 3.66rem);
+  --step-5: clamp(3.27rem, calc(3.00rem + 1.31vw), 4.58rem);
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--theme-background);
+  color: var(--theme-on-background);
+}
+
+main {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+h1 {
+  font-size: var(--step-4);
+}
+
+h2 {
+  font-size: var(--step-3);
+}
+
+h3 {
+  font-size: var(--step-2);
+}
+
+h4 {
+  font-size: var(--step-1);
+}
+
+p {
+  font-size: var(--step-0);
+}
+
+pre {
+  font-size: var(--step--1);
+}
+
+p, li {
+  max-width: 70ch;
+}
