@@ -1,0 +1,35 @@
+---
+export interface Props {
+  type?: "text" | "email" | "date" | "tel";
+  label?: string;
+  name?: string;
+  placeholder?: string;
+  autocomplete?: string;
+  required?: boolean;
+}
+
+const {type = "text", label, name, placeholder, autocomplete, required} = Astro.props;
+---
+
+<div class="form-field__container">
+  {label && <label for={name}>{label}</label>}
+  <input type={type} name={name} autocomplete={autocomplete} placeholder={placeholder} required={required}/>
+</div>
+
+<style>
+  .form-field__container input[type="text"],
+  .form-field__container input[type="email"],
+  .form-field__container input[type="date"],
+  .form-field__container input[type="tel"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid var(--form-field-border-color, #ccc);
+    color: var(--form-field-input-color, #000000);
+    border-radius: var(--form-field-border-radius, 0.25rem);
+    outline-style: none;
+    box-sizing: border-box;
+  }
+  .form-field__container input:focus {
+    border: 2px solid var(--form-field-border-focus-color, #000);
+  }
+</style>

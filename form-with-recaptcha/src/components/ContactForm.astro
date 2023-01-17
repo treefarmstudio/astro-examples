@@ -1,0 +1,48 @@
+---
+import FormInput from "./FormInput.astro";
+import FormTextarea from "./FormTextarea.astro";
+---
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<style>
+  form {
+    width: 100%;
+    max-width: var(--container-max-width--narrow);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  button {
+    width: fit-content;
+    background: var(--theme-primary);
+    color: var(--theme-on-primary);
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+</style>
+
+<form id="contact-form" action="">
+  <FormInput label="Name" name="name" required />
+  <FormInput label="Email" name="email" required />
+  <FormTextarea label="Message" name="message" required />
+  <div class="g-recaptcha" data-sitekey="CAPTCHA_SITE_KEY"></div>
+  <button>Submit</button>
+</form>
+
+<script is:inline is:raw>
+  const form = document.querySelector('#contact-form')
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    var response = grecaptcha.getResponse();
+    if (response.length == 0) {
+      alert('Please verify that you are not a robot.');
+      return false;
+    }
+    form.submit();
+  })
+</script>

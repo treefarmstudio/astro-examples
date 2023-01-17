@@ -1,0 +1,24 @@
+---
+import ContactForm from '../components/ContactForm.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Form with reCAPTCHA">
+	<main>
+    <h1>Astro Form with reCAPTCHA</h1>
+		<ContactForm />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+	}
+</style>
